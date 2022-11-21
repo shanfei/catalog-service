@@ -29,6 +29,8 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.retry:spring-retry'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    runtimeOnly 'org.postgresql:postgresql'
     // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos
     runtimeOnly 'io.netty:netty-resolver-dns-native-macos:4.1.72.Final:osx-aarch_64'
     compileOnly 'org.projectlombok:lombok'
@@ -50,5 +52,5 @@ tasks.named('test') {
 }
 
 bootRun {
-    systemProperty 'spring.profiles.active', 'default'
+    systemProperty 'spring.profiles.active', 'testdata'
 }
