@@ -78,6 +78,6 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: shannonsf
-          password: dckr_pat_V96-UczBoz2fv1lvlF54aoD1KpA
+          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
       - name: Publish container image
         run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
