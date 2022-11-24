@@ -2,3 +2,5 @@ spring:
   datasource:
     url: jdbc:tc:postgresql:14.4:///integration-test-db
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  config:
+    import: "optional:configserver:"
