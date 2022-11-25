@@ -6,6 +6,7 @@ server:
     threads:
       max: 50
       min-spare: 5
+  shutdown: graceful
 
 polar:
   greeting: Welcome to the local book catalog!
@@ -23,6 +24,8 @@ spring:
     driver-class-name: org.postgresql.Driver
   config:
     import: "optional:configserver:"
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
 
 
 management:
